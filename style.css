@@ -1,0 +1,270 @@
+/* ============================================================
+   BIẾN CSS — chỉnh màu sắc và font tại đây nếu cần
+   ============================================================ */
+:root {
+  --color-bg:          #fafaf8;
+  --color-surface:     #ffffff;
+  --color-border:      #e8e4dc;
+  --color-accent:      #2c5f8a;
+  --color-accent-soft: #eef4fa;
+  --color-text:        #1a1a1a;
+  --color-text-muted:  #6b6660;
+  --color-divider:     #d4cfc6;
+
+  --font-heading: 'Playfair Display', Georgia, serif;
+  --font-body:    'Source Serif 4', Georgia, serif;
+
+  --max-width: 780px;
+  --radius:    8px;
+}
+
+/* ============================================================
+   RESET & BASE
+   ============================================================ */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.8;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ============================================================
+   HEADER
+   ============================================================ */
+header {
+  background-color: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+  padding: 52px 24px 44px;
+  text-align: center;
+}
+
+header .site-label {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  background-color: var(--color-accent-soft);
+  border: 1px solid #c5daf0;
+  padding: 4px 14px;
+  border-radius: 100px;
+  margin-bottom: 20px;
+}
+
+/* ====================================================================
+   THAY "TÊN EXTENSION CỦA BẠN" BẰNG TÊN THỰC TẾ CỦA EXTENSION
+   ==================================================================== */
+header h1 {
+  font-family: var(--font-heading);
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  font-weight: 700;
+  color: var(--color-text);
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+}
+
+header p.subtitle {
+  margin-top: 12px;
+  font-size: 15px;
+  font-weight: 300;
+  color: var(--color-text-muted);
+  font-style: italic;
+}
+
+/* ============================================================
+   NAV (điều hướng nhanh)
+   ============================================================ */
+.quick-nav {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  padding: 20px 24px;
+  background-color: var(--color-bg);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.quick-nav a {
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  text-decoration: none;
+  padding: 6px 18px;
+  border: 1px solid var(--color-accent);
+  border-radius: 100px;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.quick-nav a:hover {
+  background-color: var(--color-accent);
+  color: #fff;
+}
+
+/* ============================================================
+   MAIN LAYOUT
+   ============================================================ */
+main {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 56px 24px 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+}
+
+/* ============================================================
+   SECTION (Privacy Policy & Terms of Service)
+   ============================================================ */
+.policy-section {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 48px 52px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+}
+
+.policy-section:target {
+  scroll-margin-top: 80px;
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+}
+
+/* Số thứ tự của section */
+.section-number {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 64px;
+  font-weight: 700;
+  color: var(--color-accent-soft);
+  line-height: 1;
+  margin-bottom: -8px;
+  user-select: none;
+}
+
+.policy-section h2 {
+  font-family: var(--font-heading);
+  font-size: clamp(1.4rem, 3vw, 1.9rem);
+  font-weight: 700;
+  color: var(--color-text);
+  letter-spacing: -0.01em;
+  padding-bottom: 16px;
+  border-bottom: 2px solid var(--color-accent);
+  margin-bottom: 32px;
+}
+
+/* ============================================================
+   NỘI DUNG BÊN TRONG SECTION
+
+   Dán nội dung của bạn vào <div class="content"> ... </div>
+   bên trong mỗi section. Các thẻ HTML hỗ trợ sẵn:
+     <h3>         — tiêu đề phụ
+     <p>          — đoạn văn
+     <ul>, <ol>, <li> — danh sách
+     <strong>     — chữ đậm
+     <em>         — chữ nghiêng
+     <a>          — liên kết
+   ============================================================ */
+.content h3 {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--color-accent);
+  margin-top: 32px;
+  margin-bottom: 10px;
+}
+
+.content p {
+  margin-bottom: 16px;
+  font-weight: 300;
+  color: #2e2e2e;
+}
+
+.content ul,
+.content ol {
+  padding-left: 24px;
+  margin-bottom: 16px;
+}
+
+.content li {
+  margin-bottom: 8px;
+  font-weight: 300;
+  color: #2e2e2e;
+}
+
+.content strong {
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.content a {
+  color: var(--color-accent);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.content a:hover {
+  opacity: 0.75;
+}
+
+/* Ngày cập nhật */
+.last-updated {
+  display: inline-block;
+  margin-top: 36px;
+  font-size: 13px;
+  font-style: italic;
+  color: var(--color-text-muted);
+  border-top: 1px solid var(--color-divider);
+  padding-top: 16px;
+  width: 100%;
+}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+footer {
+  text-align: center;
+  padding: 28px 24px;
+  border-top: 1px solid var(--color-border);
+  font-size: 13px;
+  color: var(--color-text-muted);
+  font-weight: 300;
+}
+
+footer a {
+  color: var(--color-accent);
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 600px) {
+  .policy-section {
+    padding: 32px 24px;
+  }
+
+  .section-number {
+    font-size: 44px;
+  }
+}
